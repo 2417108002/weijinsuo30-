@@ -1,0 +1,366 @@
+
+@main-color: #e92322;
+#header {
+    border-bottom: 1px solid #ccc;
+    .container {
+        .row {
+            line-height: 40px;
+            div {
+                &~div {
+                    border-left: 1px solid #ccc;
+                    font-size: 12px;
+                }
+                a {
+                    color: #666;
+                    text-decoration: none;
+                    
+                }
+                .register {
+                    color: white;
+                }
+                .erweima_link {
+                    &:hover {
+                        .erweima {
+                            display: block;
+                        }
+                    }
+                    .erweima {
+                        position: absolute;
+                        top: 40px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#nav {
+    background: #fff;
+    margin-bottom: 1px;
+    .container {   
+        .navbar-header {
+            height: 80px;
+            .navbar-toggle {
+                margin-top: 23px;
+            }
+            .navbar-brand {
+                line-height: 50px;
+                .icon-icon {
+                    font-size: 30px;
+                    color: @main-color;
+                }
+                .icon-logo {
+                    font-size: 28px;
+                    color: #000;
+                }
+            }
+        }
+        .navbar-collapse {
+            .navbar-nav {
+                li {
+                   a {
+                       line-height: 50px;
+                       &:hover {
+                        border-bottom: 2px solid @main-color;
+                       }
+                       
+                   }
+                   &.active {
+                       a {
+                           background-color: #fff; 
+                           border-bottom: 2px solid @main-color;
+                       }
+                    
+                 } 
+                }
+            }
+        }
+    }
+}
+
+#banner {
+    .small-img {
+        width: 100%;
+    }
+    .large-img {
+        width: 100%;
+        height: 410px;
+        background-position: center center;
+    }
+}
+
+#feature {
+    padding: 40px 0;
+    .container {
+       
+        .row {
+            .media {
+                margin-bottom: 10px;
+                &:hover {
+                    color: @main-color;
+                    .media-left {
+                        a {
+                            color: @main-color; 
+                        }
+                    }
+                }
+                .media-left {
+                a {
+                    color: #666;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                 }
+            }
+            
+        }
+    } 
+}
+
+#booking {
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    .container {
+        .pull-left {
+            span {
+                color: @main-color;
+            }
+        }
+        .pull-right {
+            color:#337ab7;
+        }
+    }
+}
+
+#protuct {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+    .container {
+        .nav-tabs {
+            li {
+
+                a {
+                    font-size: 18px;
+                    color: #000;
+                    &:hover {
+                        border: 1px solid transparent;
+                        background-color: transparent;
+                    }
+                }
+
+                &.active {
+                    a {
+                        border: 1px solid transparent;
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            .tab-pane {
+                >.row {
+                    >div {
+                        display: flex;
+                       
+                        .product {
+                            margin-top: 20px;
+                            background-color: #fff;
+                            display: flex;
+                            &.active{
+                                background-color: @main-color;
+                                color:#fff;
+                                position: relative;
+                                // 给单独设置伪元素添加图标
+                                &::before{
+                                    // 直接使用编码和字体也可以使用图标
+                                    content:"\e915";
+                                    font-family: 'itcast';
+                                    font-size: 30px;
+                                    position: absolute;
+                                    left: 0;
+                                    top: -6px;
+                                }
+                            }
+                              .product-left {
+                                flex: 1;
+                                padding: 15px;
+                                height: 160px;
+                                h4{
+                                    text-align: center;
+                                }
+                            .row {
+                                >div {
+                                    margin-bottom: 10px;
+                                    p {
+                                        margin-bottom: 0;
+                                    }
+                                    &:nth-child(2n){
+                                        text-align: right;
+                                    }
+
+                                }
+                            }
+                           
+                        }
+                        .product-right {
+                            position: relative;
+                            display: flex;
+                            width: 100px;
+                            height: 160px;
+                            flex-direction: column;
+                            justify-content: center;
+                            border-left: 1px dashed #ccc;
+                            p{
+                                text-align: center;
+                               
+                                strong{
+                                    font-size: 30px;
+                                }
+                            }
+                            // 两个小圆使用伪元素方式添加 公共样式使用并集选择器
+                            &::before,&::after{
+                                content:'';
+                                position: absolute;
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                left: -8px;
+                                background-color: #f5f5f5;
+                            }
+                            &::before{
+                                top: -8px;
+                            }
+                            &::after{
+                                bottom: -8px;
+                            }
+                            .tooltips {
+                                position: absolute;
+                                top: 10px;
+                                width: 100%;
+                                text-align: center;
+                                .tooltip1 {
+                                    border: 1px solid @main-color;
+                                    color: @main-color;
+                                }
+                                .tooltip2 {
+                                    border: 1px solid green;
+                                    color: green;
+                                }
+                                .tooltip1,
+                                .tooltip2 {
+                                    &:hover {
+                                        background-color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                        }
+                      
+                    }
+                }
+            }
+        }
+    }
+}
+
+#news {
+    padding: 60px 0;
+    .row {
+        > div {
+           
+            h4 {
+                position: relative;
+                height: 40px;
+                text-align: center;
+                border-bottom: 1px dashed #ccc;
+
+                &::after {
+                    position: absolute;
+                    right: -10px;
+                    bottom: -5px;
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                    content: '';
+                }
+            } 
+            .nav-tabs {
+                border-bottom: none;
+                li {
+                    a {
+                        display: flex;
+                        width: 60px;
+                        height: 60px;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        margin-bottom: 10px;
+                        &:hover {
+                        
+                            background-color: @main-color;
+                            border-radius: 50%;
+                        }
+                        i {
+                            font-size: 30px;
+                            color: #ccc;
+                        }
+                    }
+                    
+                    &.active {
+                        a {
+                            background: @main-color;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            @media(max-width:992px){
+                 .nav-tabs {
+                    li {
+                        width: 25%;
+                        a {
+                            margin: 0 auto;
+                        }
+                    }
+
+                 }
+            }
+            .tab-content {
+                .tab-pane {
+                    .list-unstyled {
+                        margin-left: 50px;
+                        li {
+                            line-height: 40px;
+                            font-size: 16px;
+                            color: #666;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+#footer {
+    padding-bottom:  150px ;
+    h4 {
+       
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+
+    .row {
+        text-align: center;
+        i {
+            font-size: 60px;
+        }
+    }
+}
